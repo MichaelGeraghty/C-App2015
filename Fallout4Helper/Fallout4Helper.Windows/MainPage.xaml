@@ -1,0 +1,75 @@
+﻿<Page
+    x:Name="pageRoot"
+    x:Class="Fallout4Helper.MainPage"
+    DataContext="{Binding DefaultViewModel, RelativeSource={RelativeSource Self}}"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Fallout4Helper"
+    xmlns:common="using:Fallout4Helper.Common"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Page.Resources>
+        <!-- TODO: Delete this line if the key AppName is declared in App.xaml -->
+        <x:String x:Key="AppName">Fallout 4 Helper</x:String>
+    </Page.Resources>
+
+    <!--
+        This grid acts as a root panel for the page that defines two rows:
+        * Row 0 contains the back button and page title
+        * Row 1 contains the rest of the page layout
+    -->
+    <Grid>
+        <Grid.Background>
+            <ImageBrush Stretch="Fill" ImageSource="Assets/welcome.jpg"/>
+        </Grid.Background>
+        <Grid.ChildrenTransitions>
+            <TransitionCollection>
+                <EntranceThemeTransition/>
+            </TransitionCollection>
+        </Grid.ChildrenTransitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="140"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Back button and page title -->
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="120"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="backButton" Margin="39,59,39,0" Command="{Binding NavigationHelper.GoBackCommand, ElementName=pageRoot}"
+                        Style="{StaticResource NavigationBackButtonNormalStyle}"
+                        VerticalAlignment="Top"
+                        AutomationProperties.Name="Back"
+                        AutomationProperties.AutomationId="BackButton"
+                        AutomationProperties.ItemType="Navigation Button"/>
+            <TextBlock x:Name="pageTitle" Text="{StaticResource AppName}" Style="{StaticResource HeaderTextBlockStyle}" Grid.Column="1" 
+                        IsHitTestVisible="false" TextWrapping="NoWrap" VerticalAlignment="Bottom" Margin="0,0,30,40" Foreground="#FF2DB80F"/>
+        </Grid>
+        <Button x:Name="perks_Button" HorizontalAlignment="Left" Margin="7,170,0,0" Grid.Row="1" VerticalAlignment="Top" Height="210" Width="350" Click="perks_Clicked">
+            <Button.Background>
+                <ImageBrush Stretch="Fill" ImageSource="Assets/top5perks.jpg"/>
+            </Button.Background>
+
+        </Button>
+        <Button x:Name="special_Button" HorizontalAlignment="Left" Margin="731,170,0,0" Grid.Row="1" VerticalAlignment="Top" Height="210" Width="350" Click="special_clicked">
+            <Button.Background>
+                <ImageBrush Stretch="Fill" ImageSource="Assets/special.jpg"/>
+            </Button.Background>
+
+        </Button>
+        <TextBox x:Name="perkstextBox" HorizontalAlignment="Left" Margin="130,81,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Perks" VerticalAlignment="Top" Height="87" Width="142" Background="{ThemeResource AppBarToggleButtonCheckedDisabledForegroundThemeBrush}" Foreground="#FF2DB80F" FontSize="48"/>
+        <TextBox x:Name="specialtextBox" HorizontalAlignment="Left" Margin="774,86,0,0" Grid.Row="1" TextWrapping="Wrap" Text="S.P.E.C.I.A.L" VerticalAlignment="Top" Height="87" Width="263" Background="{ThemeResource AppBarToggleButtonCheckedDisabledForegroundThemeBrush}" Foreground="#FF2DB80F" FontSize="48"/>
+        <Button x:Name="factions" HorizontalAlignment="Left" Margin="379,418,0,0" Grid.Row="1" VerticalAlignment="Top" Height="210" Width="350" Click="factions_Clicked">
+            <Button.Background>
+                <ImageBrush Stretch="Fill" ImageSource="Assets/factions.jpg"/>
+            </Button.Background>
+
+        </Button>
+        <TextBox x:Name="perkstextBox_Copy" HorizontalAlignment="Left" Margin="457,329,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Factions" VerticalAlignment="Top" Height="87" Width="202" Background="{ThemeResource AppBarToggleButtonCheckedDisabledForegroundThemeBrush}" Foreground="#FF2DB80F" FontSize="48"/>
+
+    </Grid>
+</Page>

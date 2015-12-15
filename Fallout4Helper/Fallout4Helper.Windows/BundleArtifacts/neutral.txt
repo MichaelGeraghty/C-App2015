@@ -1,0 +1,4 @@
+MainPackage=C:\Users\micha\Desktop\Second year Gmit\C#\C#Project\Fallout4Helper\Fallout4Helper\Fallout4Helper.Windows\bin\Release\Fallout4Helper.Windows_1.1.0.3_AnyCPU.appx
+SymbolPackage=C:\Users\micha\Desktop\Second year Gmit\C#\C#Project\Fallout4Helper\Fallout4Helper\Fallout4Helper.Windows\AppPackages\Fallout4Helper.Windows_1.1.0.3_Test\Fallout4Helper.Windows_1.1.0.3_AnyCPU.appxsym
+ResourcePack=C:\Users\micha\Desktop\Second year Gmit\C#\C#Project\Fallout4Helper\Fallout4Helper\Fallout4Helper.Windows\bin\Release\Fallout4Helper.Windows_1.1.0.3_scale-140.appx
+ResourcePack=C:\Users\micha\Desktop\Second year Gmit\C#\C#Project\Fallout4Helper\Fallout4Helper\Fallout4Helper.Windows\bin\Release\Fallout4Helper.Windows_1.1.0.3_scale-180.appx

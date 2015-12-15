@@ -1,0 +1,128 @@
+﻿<Page
+    x:Name="pageRoot"
+    x:Class="Fallout4Helper.special"
+    DataContext="{Binding DefaultViewModel, RelativeSource={RelativeSource Self}}"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Fallout4Helper"
+    xmlns:common="using:Fallout4Helper.Common"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Page.Resources>
+        <!-- TODO: Delete this line if the key AppName is declared in App.xaml -->
+        <x:String x:Key="AppName">S.P.E.C.I.A.L</x:String>
+    </Page.Resources>
+
+    <!--
+        This grid acts as a root panel for the page that defines two rows:
+        * Row 0 contains the back button and page title
+        * Row 1 contains the rest of the page layout
+    -->
+    <Grid>
+        <Grid.Background>
+            <ImageBrush Stretch="Fill" ImageSource="Assets/you'reSpecial.jpg"/>
+        </Grid.Background>
+        <Grid.ChildrenTransitions>
+            <TransitionCollection>
+                <EntranceThemeTransition/>
+            </TransitionCollection>
+        </Grid.ChildrenTransitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="140"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Back button and page title -->
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="120"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="backButton" Margin="39,59,39,0" Command="{Binding NavigationHelper.GoBackCommand, ElementName=pageRoot}"
+                        Style="{StaticResource NavigationBackButtonNormalStyle}"
+                        VerticalAlignment="Top"
+                        AutomationProperties.Name="Back"
+                        AutomationProperties.AutomationId="BackButton"
+                        AutomationProperties.ItemType="Navigation Button"/>
+            <TextBlock x:Name="pageTitle" Text="{StaticResource AppName}" Style="{StaticResource HeaderTextBlockStyle}" Grid.Column="1" 
+                        IsHitTestVisible="false" TextWrapping="NoWrap" VerticalAlignment="Bottom" Margin="0,0,30,40" Foreground="#FF3CC708"/>
+        </Grid>
+        <Button x:Name="strength"  HorizontalAlignment="Left" Margin="-3,2,0,0" Grid.Row="1" VerticalAlignment="Top" Height="219" Width="175" RenderTransformOrigin="0.443,-0.916" Click="strength_clicked">
+            <Button.Background>
+                <ImageBrush Stretch="Fill" ImageSource="Assets/strength.jpg"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="perception"  HorizontalAlignment="Left" Margin="166,-3,0,0" Grid.Row="1" VerticalAlignment="Top" Height="224" Width="175" RenderTransformOrigin="0.443,-0.916" Click="perception_clicked">
+            <Button.Background>
+                <ImageBrush Stretch="Fill" ImageSource="Assets/perception.jpg"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="endurance"  HorizontalAlignment="Left" Margin="335,-3,0,0" Grid.Row="1" VerticalAlignment="Top" Height="224" Width="175" RenderTransformOrigin="0.443,-0.916" Click="endurance_clicked">
+            <Button.Background>
+                <ImageBrush Stretch="Fill" ImageSource="Assets/endurance.jpg"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="charisma"  HorizontalAlignment="Left" Margin="509,-3,0,0" Grid.Row="1" VerticalAlignment="Top" Height="224" Width="175" RenderTransformOrigin="0.443,-0.916" Click="charisma_clicked">
+            <Button.Background>
+                <ImageBrush Stretch="Fill" ImageSource="Assets/charisma.jpg"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="inteligence"  HorizontalAlignment="Left" Margin="678,-3,0,0" Grid.Row="1" VerticalAlignment="Top" Height="224" Width="175" RenderTransformOrigin="0.443,-0.916" Click="intelligence_clicked">
+            <Button.Background>
+                <ImageBrush Stretch="Fill" ImageSource="Assets/intelligence.jpg"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="agility"  HorizontalAlignment="Left" Margin="847,-3,0,0" VerticalAlignment="Top" Height="224" Width="175" RenderTransformOrigin="0.443,-0.916" Click="agility_clicked" Grid.Row="1">
+            <Button.Background>
+                <ImageBrush Stretch="Fill" ImageSource="Assets/agility.jpg"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="luck"  HorizontalAlignment="Left" Margin="1016,-3,0,0" Grid.Row="1" VerticalAlignment="Top" Height="224" Width="175" RenderTransformOrigin="0.443,-0.916" Click="luck_clicked">
+            <Button.Background>
+                <ImageBrush Stretch="Fill" ImageSource="Assets/luck.jpg"/>
+            </Button.Background>
+        </Button>
+        <TextBox x:Name="strengthInfo"  Opacity="0" HorizontalAlignment="Left" Margin="207,233,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Strength is a measure of your physical power. It affects how much you can carry and your damage in melee combat.
+
+The Wasteland is dangerous place. There are a lot of different threads there: raiders, monsters, wild animals and so on. Most of them are aggressive and will try to kill you to take your loot or to feed. You will have to defend yourself in order to survive. Strength is perfect characteristic for this. It allows you to use fists or any weapon that can be worn on hands more effectively. That's all about different knives, baseball bats and so on. But don't forget: some situations require more than just muscle.
+
+Strength is not only for close quarters combat. You will have to travel a lot. There are many different places to visit and explore in the game. You will find many cool items and the stronger you are the more you can carry. If you are looking for a way to increase your inventory space – increase your strength." VerticalAlignment="Top" Width="927" Height="385" IsReadOnly="True" FontSize="24" Background="#FF111010" Foreground="#FF3CC514"/>
+        <TextBox x:Name="perceptionInfo"  Opacity="0" HorizontalAlignment="Left" Margin="207,233,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Perception is your environmental awareness and sixth sense and affects weapon accuracy in V.A.T.S.
+
+Post-nuclear world is dangerous. You will have to defend yourself against different threats: animals, monsters, raiders and so on. You can do this using your natural Strength but it's not the only way. You can also use ranged weapons. Different rifles and shotguns allow to avoid face-to-face combat. You can kill enemy from distance.
+
+What's the main difficulty? You need to have enough accuracy in order to hit the target. If you have played previous Fallout games you know that there is special Vault-tec Assisted Targeting System (VATS). This system allows to scan the treat and pinpoint areas of weakness. The higher your Perception the more accurate you will be.
+
+There may be times when you must engage in questionable activities like stealing items, pickpocketing and so on. Perception allows you to do such actions without being detected." VerticalAlignment="Top" Width="959" Height="385" IsReadOnly="True" FontSize="24" Background="#FF111010" Foreground="#FF3CC514"/>
+        <TextBox x:Name="enduranceInfo"  Opacity="0" HorizontalAlignment="Left" Margin="207,289,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Endurance – measure of your overall physical fitness. It affects your total health and the Action Point drain from sprinting.
+
+Though the wasteland is dangerous place you need not only physical strength and agility to survive there. You need to be healthy in general. That's where Endurance can help you. If you wish to increase your health pool, stamina pool and natural resistances to radiation you should increase this attribute." VerticalAlignment="Top" Width="959" Height="254" IsReadOnly="True" FontSize="24" Background="#FF111010" Foreground="#FF3CC514"/>
+
+        <TextBox x:Name="charismaInfo"  Opacity="0" HorizontalAlignment="Left" Margin="207,233,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Charisma – is the ability to charm and convince others in Fallout 4. It affects the prices of barter deals and your ability to persuade people in dialogues.
+
+Most players try to build their characters investing attribute points into Strength and Agility. That's a good idea. Such combination of attributes makes character stronger. But they forget about social side of the game. There are a lot of different NPCs and you will have to interact with them. If you wish to have a lot of friends and allies don't forget to spend some points for boosting Charisma.
+
+Charisma in Fallout 4 allows you to charm people faster. Traders will always provide you with better prices and NPCs will be your friends. You can also intimidate and persuade people to fight on your side or to fight against you (sometimes this may help).
+
+In general Charisma is social attribute. If you wish to be a social person don't ignore this stat." VerticalAlignment="Top" Width="927" Height="385" IsReadOnly="True" FontSize="24" Background="#FF111010" Foreground="#FF3CC514"/>
+        <TextBox x:Name="intelligenceInfo"  Opacity="0" HorizontalAlignment="Left" Margin="207,233,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Intelligence – determines overall acuity and affects the number of Experience Points earned.
+
+Strength is important in wasteland. If your character is strong he can carry more and defend himself. Intelligence may look useless but it is one of the most useful stats for your character. That's because different perks that help to upgrade weapon and armor depend on this attribute. If you don't invest skill points into intelligence your hero will not be able to upgrade weapons.
+
+Moreover, this attribute also affects your possibility to use different electric machines like automatic turrets and control panels. It's a very important part of settlement building. If you wish to focus on developing your own cities you should spend skill point into this attribute." VerticalAlignment="Top" Width="927" Height="385" IsReadOnly="True" FontSize="24" Background="#FF111010" Foreground="#FF3CC514"/>
+
+        <TextBox x:Name="agilityInfo"  Opacity="0" HorizontalAlignment="Left" Margin="207,233,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Agility - is a measure of your overall finesse and reflexes. It affects your ability to sneak and number of Action Points in V.A.T.S.
+
+Agility is an important stat for those who wish to be stealthy. If you like to complete quests without attracting attention – this attribute is for you. Invest your skill points and transform your hero into special agent.
+
+This attribute is also important for players who use Vault-tec Assisted Targeting System because it affects number of Action Points in V.A.T.S." VerticalAlignment="Top" Width="927" Height="276" IsReadOnly="True" FontSize="24" Background="#FF111010" Foreground="#FF3CC514"/>
+        <TextBox x:Name="luckInfo"  Opacity="0" HorizontalAlignment="Left" Margin="207,233,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Luck - measure of your general good fortune. Affects Critical Hits and chances of finding better items.
+
+Luck is the last attribute in S.P.E.C.I.A.L. but not the least! How to describe this stat? Well, there are many events in Fallout 4 that are random. For example you may open a chest and find random item there. Or you may deal critical damage on 30% of your attacks. That's where your luck becomes important.
+
+Fortune loves you. You find more great items in loot and while traveling, you find more bottle caps, you deal more damage and your chance to hit an enemy with a critical strike grows. An enemy will not find you while you are sneaking and so on. This attribute increases your performance in general." VerticalAlignment="Top" Width="927" Height="310" IsReadOnly="True" FontSize="24" Background="#FF111010" Foreground="#FF3CC514"/>
+
+    </Grid>
+</Page>
