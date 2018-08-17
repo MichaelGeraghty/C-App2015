@@ -1,2 +1,2 @@
-# C-App2015
-xmas C# app Fallout 4 Helper
+# Fallout 4 Information App
+2015 December Mobile App Project for Fallout 4 Release
